@@ -11,7 +11,7 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-/*
+
     private FirebaseAuth firebaseAuth;
     private Button logout;
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void Logout(){
+    public void Logout(){
         firebaseAuth.signOut();
         finish();
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -46,15 +46,36 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logoutMenu:{
+                Logout();
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /*
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
         switch(item.getItemId()){
             case R.id.logoutMenu:{
-                Logout();
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
             case R.id.profileMenu:
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
+
+
     */
 }
