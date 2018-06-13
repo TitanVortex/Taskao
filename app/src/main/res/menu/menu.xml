@@ -4,17 +4,17 @@
 
 
     <item
-        android:id="@+id/logoutMenu"
+        android:id="@+id/refreshMenu"
         android:orderInCategory="100"
         app:showAsAction="never"
-        android:title="Logout">
+        android:title="Refresh">
     </item>
 
     <item
-        android:id="@+id/profileMenu"
+        android:id="@+id/logoutMenu"
         android:orderInCategory="200"
         app:showAsAction="never"
-        android:title="Profile">
+        android:title="Logout">
     </item>
 
 

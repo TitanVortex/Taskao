@@ -7,13 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private Button logout;
+    //private Button logout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        logout = (Button)findViewById(R.id.btnLogout);
+        // logout = (Button)findViewById(R.id.btnLogout);
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        /*logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Logout();
             }
-        });
+        });*/
     }
 
     public void Logout(){
@@ -53,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
     /*
     @Override

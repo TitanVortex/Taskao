@@ -116,7 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
                         finish();
                         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                     }else{
-                        Toast.makeText(RegisterActivity.this, "Verification mail has'nt been sent!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Verification mail has not been sent!", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -126,7 +126,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        UserProfile userProfile = new UserProfile(name, email);
+        UserProfile userProfile = new UserProfile(email, name);
         myRef.setValue(userProfile);
     }
 
