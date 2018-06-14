@@ -23,7 +23,6 @@
         <activity android:name=".PasswordActivity" />
         <activity android:name=".UpdateProfile" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".AddToDoActivity" />
         <activity android:name=".AddActivity"></activity>
     </application>
 

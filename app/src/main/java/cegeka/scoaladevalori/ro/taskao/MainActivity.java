@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    //private Button logout;
+    private Button AddActivity;
 
 
     @Override
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
 
         // logout = (Button)findViewById(R.id.btnLogout);
 
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 
 
