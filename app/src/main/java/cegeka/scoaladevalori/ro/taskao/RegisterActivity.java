@@ -25,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
+    // private FirebaseDatabase firebaseDatabase;
     String email, name,  password, passwordCon;
 
     @Override
@@ -34,12 +35,12 @@ public class RegisterActivity extends AppCompatActivity {
         setupUIViews();
 
         firebaseAuth = FirebaseAuth.getInstance();
+        // firebaseDatabase = FirebaseDatabase.getInstance();
 
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(validate()){
-                    //Upload data to the database
                     String user_email = userEmail.getText().toString().trim();
                     String user_password = userPassword.getText().toString().trim();
 
@@ -49,9 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                             if(task.isSuccessful()){
                                 sendEmailVerification();
-                                sendUserData();
                                 firebaseAuth.signOut();
-                                Toast.makeText(RegisterActivity.this, "Successfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Successfully Registered! Upload complete!", Toast.LENGTH_SHORT).show();
                                 finish();
                                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                             }else{
@@ -91,10 +91,10 @@ public class RegisterActivity extends AppCompatActivity {
         email = userEmail.getText().toString();
 
         if(name.isEmpty() || password.isEmpty() || passwordCon.isEmpty() || email.isEmpty()){
-            Toast.makeText(this, "Please enter all the details!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter all the details!", Toast.LENGTH_LONG).show();
         }
         if(! passwordCon.toString().equals(password.toString())) {
-                Toast.makeText(this, "The passwords must be the same!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "The passwords must be the same!", Toast.LENGTH_LONG).show();
             }else {
             result = true;
         }
@@ -111,12 +111,12 @@ public class RegisterActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         sendUserData();
-                        Toast.makeText(RegisterActivity.this, "Successfully Registered, Verification mail sent!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Successfully Registered, Verification mail sent!", Toast.LENGTH_LONG).show();
                         firebaseAuth.signOut();
                         finish();
                         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                     }else{
-                        Toast.makeText(RegisterActivity.this, "Verification mail has not been sent!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Verification mail has not been sent!", Toast.LENGTH_LONG).show();
                     }
                 }
             });

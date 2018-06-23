@@ -21,9 +21,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PasswordActivity" />
-        <activity android:name=".UpdateProfile" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".AddActivity"></activity>
+        <activity android:name=".AddActivity" />
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>

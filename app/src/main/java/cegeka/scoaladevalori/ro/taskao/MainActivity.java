@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private Button AddActivity;
+    TextView actTitle,actDesc, actDate;
 
 
     @Override
@@ -23,8 +24,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         firebaseAuth = FirebaseAuth.getInstance();
 
+        AddActivity = findViewById(R.id.btnAddActivityMain);
+
+        AddActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AddActivity.class));
+            }
+        });
 
         // logout = (Button)findViewById(R.id.btnLogout);
 
@@ -34,7 +44,17 @@ public class MainActivity extends AppCompatActivity {
                 Logout();
             }
         });*/
+
+
+
+
+
+
+
     }
+
+
+
 
     public void Logout(){
         firebaseAuth.signOut();

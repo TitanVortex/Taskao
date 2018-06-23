@@ -41,15 +41,15 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 UserActivities userActivities = dataSnapshot.getValue(UserActivities.class);
-                titleActivity.setText("Name: " + userActivities.getUserActivityTitile());
-                descriptionActivity.setText("Age: " + userActivities.getUserActivityDescription());
-                dateActivity.setText("Email: " + userActivities.getUserActivityDate());
+                titleActivity.setText("Title: " + userActivities.getUserActivityTitile());
+                descriptionActivity.setText("Description: " + userActivities.getUserActivityDescription());
+                dateActivity.setText("Date: " + userActivities.getUserActivityDate());
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(AddActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
-            }
+                Toast.makeText(AddActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();            }
         });
     }
+
 }

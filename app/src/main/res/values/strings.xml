@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Taskao</string>
+    <string name="appbar_scrolling_view_behavior">2</string>
 </resources>

@@ -10,7 +10,7 @@ public class UserProfile {
     public UserProfile(){
     }
 
-    public UserProfile(String userName, String userEmail) {
+    public UserProfile(String userEmail, String userName) {
         this.userEmail = userEmail;
         this.userName = userName;
     }

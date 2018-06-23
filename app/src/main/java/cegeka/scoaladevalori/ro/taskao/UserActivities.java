@@ -1,6 +1,7 @@
 package cegeka.scoaladevalori.ro.taskao;
 
 public class UserActivities {
+
     public String userActivityTitile;
     public String userActivityDescription;
     public String userActivityDate;
@@ -37,4 +38,5 @@ public class UserActivities {
     public void setUserActivityDate(String userActivityDate) {
         this.userActivityDate = userActivityDate;
     }
+
 }
